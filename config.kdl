@@ -15,7 +15,7 @@ input {
 
 output "eDP-1" {
     mode "3200x2080@120.030"
-    scale 1.75
+    scale 1.70
     transform "normal"
     position x=0 y=1080
 }
@@ -120,6 +120,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Alt+Space hotkey-overlay-title="Open a App Launcher: fuzzel" { spawn "fuzzel"; }
+    Mod+B hotkey-overlay-title="Open a Browser: helium" { spawn "helium-browser"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -261,9 +263,9 @@ binds {
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+S { screenshot; }
+    Mod+Shift+S { screenshot-screen; }
+    Mod+Shift+Alt+S { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
